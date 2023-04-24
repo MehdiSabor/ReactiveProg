@@ -41,6 +41,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @RestController
@@ -54,6 +55,8 @@ public class MyController {
     }
 //http://localhost:8080/browse?subFolder=test
  // Endpoint for browsing the shared folder and its sub-folders
+
+
 @GetMapping("/browse")
 public ResponseEntity<List<String>> browseFolder(@RequestParam(value = "subFolder", required = false) String subFolder) {
     // Create a list to hold the names of files and folders in the shared folder
