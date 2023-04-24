@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@akanass/rx-http-request": "^3.3.0"
+  }
+}

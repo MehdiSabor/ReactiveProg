@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Shared Folder Browser</title>
+</head>
+<body>
+    <h1>Remote Shared Folder Browser</h1>
+    <label for="interval">Update interval (seconds):</label>
+    <input type="number" id="interval" min="1" value="5">
+    <button id="toggleUpdates">Start</button>
+    <div id="contentDisplay"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/7.5.3/rxjs.umd.min.js"></script>
+    <script src="node_modules/@akanass/rx-http-request/browser/index.js" type="application/javascript"></script>
+    <script src="client.js"></script>
+    
+      
+</body>
+</html>

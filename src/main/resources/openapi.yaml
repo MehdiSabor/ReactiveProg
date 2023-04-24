@@ -1,0 +1,122 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /rename:
+    put:
+      tags:
+        - my-controller
+      operationId: renameFile
+      parameters:
+        - name: oldpath
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: newpath
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /upload:
+    post:
+      tags:
+        - my-controller
+      operationId: upload
+      parameters:
+        - name: path
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - file
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+  /hello:
+    get:
+      tags:
+        - my-controller
+      operationId: hello
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /download:
+    get:
+      tags:
+        - my-controller
+      operationId: download
+      parameters:
+        - name: path
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+                format: binary
+  /browse:
+    get:
+      tags:
+        - my-controller
+      operationId: browseFolder
+      parameters:
+        - name: subFolder
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  type: string
+  /delete:
+    delete:
+      tags:
+        - my-controller
+      operationId: delete
+      parameters:
+        - name: path
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+components: {}
